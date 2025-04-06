@@ -27,4 +27,9 @@ public class UserDetailService implements UserDetailsService {
         }
         return new UserDetail(authentication.get().getUser());
     }
+
+    public static Object getUserList() {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
+    }
 }

@@ -62,11 +62,19 @@ public class UserController {
         // Modelに登録
         model.addAttribute("user", service.getUser(id));
         // User更新画面に遷移
-        return "user/update";
+        return "user/update"; //変更//
     }
 
-    /** User更新処理 */
+    /** User更新処理
+     * @return */
     @PostMapping("/update/{id}/")
+    public String postRegister1(@Validated User user, BindingResult res, Model model) {
+        if(res.hasErrors()) {
+            // エラーあり
+            return getRegister(user);
+        }
+        return null;}
+
     public String postUser(User user) {
         // User登録
         service.saveUser(user);
