@@ -65,6 +65,20 @@ public class UserController {
         return "user/update"; //変更//
     }
 
+
+
+    /** User更新画面を表示 * 追記/
+    @GetMapping("/user/list/")
+    public String getUserList(@PathVariable("id") Integer id, Model model) {
+        // Modelに登録
+        model.addAttribute("userlist", service.getUser(id));
+        // User更新画面に遷移
+        return "user/list"; //変更//
+    }
+
+
+
+
     /** User更新処理
      * @return */
     @PostMapping("/update/{id}/")
